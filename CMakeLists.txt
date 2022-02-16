@@ -17,3 +17,8 @@ set(SOURCE_FILES main.cpp)
 
 # use SOURCE_FILES to create an executable
 add_executable(test ${SOURCE_FILES})
+
+# add a .gitignore to the build directory if not already there
+if(NOT EXISTS ${PROJECT_BINARY_DIR}/.gitignore)
+  file(WRITE ${PROJECT_BINARY_DIR}/.gitignore "*")
+endif()
